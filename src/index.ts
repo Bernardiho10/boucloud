@@ -1,13 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Initialise Canvas Particle Engine
+    // 1. Initialise Canvas Particle Engine (High Intensity)
     initParticles();
 
-    // 2. Reveal Observer for appear-on-scroll animations
+    // 2. Clear Sky Reveal Observer
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
                 entry.target.classList.remove('exit');
+                
+                // Trigger background lazy-load
+                const bg = entry.target.querySelector('.section-bg');
+                if (bg) bg.classList.add('visible');
             } else {
                 if (entry.boundingClientRect.top < 0) {
                     entry.target.classList.add('exit');
@@ -17,19 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0.1,
+        rootMargin: '0px'
     });
 
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.snap-section').forEach(el => revealObserver.observe(el));
 
-    // 3. Email Capture Logic
-    setupEmailCapture();
+    // 3. Email Registry Logic
+    setupEmailRegistry();
 });
 
 /**
- * Particle Engine - Canvas Implementation
- * Industry-standard performance with 0 dependencies
+ * Particle Engine - High Contrast Edition
+ * Darker Sky-blue particles (#0284C7) for high visibility on light backgrounds.
  */
 function initParticles() {
     const canvas = document.createElement('canvas');
@@ -61,9 +65,9 @@ function initParticles() {
         constructor() {
             this.x = Math.random() * w;
             this.y = Math.random() * h;
-            this.size = Math.random() * 1.5 + 0.5;
-            this.speedX = Math.random() * 0.5 - 0.25;
-            this.speedY = Math.random() * 0.5 - 0.25;
+            this.size = Math.random() * 2.5 + 0.8;
+            this.speedX = Math.random() * 0.4 - 0.2;
+            this.speedY = Math.random() * 0.4 - 0.2;
             this.opacity = Math.random() * 0.5 + 0.2;
         }
 
@@ -79,7 +83,8 @@ function initParticles() {
 
         draw() {
             if (!ctx) return;
-            ctx.fillStyle = `rgba(37, 99, 235, ${this.opacity})`; // Bou Blue
+            // High Visibility Blue particles
+            ctx.fillStyle = `rgba(2, 132, 199, ${this.opacity})`;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
@@ -88,7 +93,7 @@ function initParticles() {
 
     const init = () => {
         particles = [];
-        const count = Math.min(Math.floor((w * h) / 10000), 100);
+        const count = Math.min(Math.floor((w * h) / 8000), 120);
         for (let i = 0; i < count; i++) {
             particles.push(new Particle());
         }
@@ -107,10 +112,7 @@ function initParticles() {
     animate();
 }
 
-/**
- * Email Capture Feedback & Logic
- */
-function setupEmailCapture() {
+function setupEmailRegistry() {
     const emailInput = document.getElementById('email-input') as HTMLInputElement;
     const subscribeBtn = document.getElementById('subscribe-btn') as HTMLButtonElement;
     const statusMsg = document.getElementById('status-msg') as HTMLDivElement;
@@ -118,31 +120,17 @@ function setupEmailCapture() {
     if (emailInput && subscribeBtn && statusMsg) {
         subscribeBtn.addEventListener('click', () => {
             const email = emailInput.value.trim();
+            if (!email) return;
 
-            if (validateEmail(email)) {
-                subscribeBtn.disabled = true;
-                subscribeBtn.innerText = 'Syncing...';
+            subscribeBtn.disabled = true;
+            subscribeBtn.innerText = 'Syncing Entry...';
 
-                setTimeout(() => {
-                    subscribeBtn.innerText = 'Reserved';
-                    subscribeBtn.style.backgroundColor = '#10A500'; // Bou Green
-                    
-                    statusMsg.style.opacity = '1';
-                    statusMsg.innerText = "Welcome to the future of cloud.";
-                }, 1200);
-            } else {
-                statusMsg.innerText = 'Enterprise email required.';
+            setTimeout(() => {
+                subscribeBtn.innerText = 'Initialized';
+                subscribeBtn.style.backgroundColor = '#10A500'; // BOU Green
                 statusMsg.style.opacity = '1';
-                statusMsg.style.color = '#ef4444';
-                
-                setTimeout(() => {
-                    statusMsg.style.opacity = '0';
-                }, 3000);
-            }
+                statusMsg.classList.add('translate-y-0');
+            }, 1000);
         });
     }
-}
-
-function validateEmail(email: string) {
-    return String(email).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 }

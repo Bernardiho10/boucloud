@@ -4,34 +4,30 @@ import copy from 'rollup-plugin-copy';
 import commonjs from '@rollup/plugin-commonjs';
 import {glob} from 'glob';
 
-const inputFiles = glob.sync('./src/*.ts'); // Adjust the pattern as needed
+const inputFiles = glob.sync('./src/*.ts'); 
+
 export default {
     input: inputFiles,
     output: {
         dir: 'public/assets/js',
         format: 'esm',
         sourcemap: false,
-        preserveModules: true,  // Preserve module structure
-        preserveModulesRoot: 'src',  // Keep module structure relative to 'src'
+        preserveModules: false, // Flatten JS output to avoid nested src/ structure
     },
     plugins: [
         copy({
             targets: [
-                {src: 'src/**/*.css', dest: 'public/assets/css'},
-                {src: 'src/**/*.js', dest: 'public/assets/js'},
+                // Flatten styles into assets/css
+                { src: 'src/assets/css/*.css', dest: 'public/assets/css', flatten: true },
+                // Flatten images into assets/img
+                { src: 'src/assets/img/*', dest: 'public/assets/img', flatten: true },
             ],
-            flatten: false // preserves subdirectory structure
-        }),
-        copy({
-            targets: [
-                {src: 'src/assets/img/*', dest: 'public/assets/img'},
-            ],
-            flatten: true
+            verbose: true
         }),
         typescript({
             tsconfig: './tsconfig.json'
         }),
-        nodeResolve(), // This plugin allows Rollup to resolve modules from node_modules
-        commonjs() // Converts CommonJS modules to ES modules
+        nodeResolve(),
+        commonjs()
     ]
 }
