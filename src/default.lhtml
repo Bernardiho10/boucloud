@@ -9,13 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link type="ham/layout-css"/>
-  <style>
-    body {
-      font-family: 'Outfit', sans-serif;
-      background-color: #020617;
-      color: #f8fafc;
-    }
-  </style>
+
 </head>
 <body class="antialiased">
 
