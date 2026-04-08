@@ -19,9 +19,14 @@ export default {
             targets: [
                 {src: 'src/**/*.css', dest: 'public/assets/css'},
                 {src: 'src/**/*.js', dest: 'public/assets/js'},
-                {src: 'src/assets/img/*', dest: 'public/assets/img'},
             ],
             flatten: false // preserves subdirectory structure
+        }),
+        copy({
+            targets: [
+                {src: 'src/assets/img/*', dest: 'public/assets/img'},
+            ],
+            flatten: true
         }),
         typescript({
             tsconfig: './tsconfig.json'
