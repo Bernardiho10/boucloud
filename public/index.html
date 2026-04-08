@@ -1,7 +1,19 @@
-<div class="page h-screen w-screen overflow-hidden flex flex-col items-center justify-center relative bg-sky-50"
-  data-ham-page-config='{
-      "layout": "default.lhtml"
-    }'>
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BouCloud | Enterprise Cloud Infrastructure</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  
+<link rel="stylesheet" href="/assets/css/index.css"/>
+
+</head>
+<body class="antialiased">
+
+<main class="min-h-screen relative">
+  <div class="page h-screen w-screen overflow-hidden flex flex-col items-center justify-center relative bg-sky-50">
   <style>
     :root {
       --bou-green: #10A500;
@@ -215,22 +227,21 @@
   <!-- Content -->
   <main class="content-container">
     <div class="logo-frame">
-      <img src="/assets/img/boucloud_logo.jpeg" alt="BouCloud">
+      <img src="/assets/img/boucloud_logo.jpeg" alt="BouCloud"/>
     </div>
 
     <div class="coming-soon-tag">Establishing Nodes 2026</div>
 
-    <h1>The Sovereign Cloud <br> <span class="text-bou-blue italic opacity-95">Infrastructure Redefined</span></h1>
+    <h1>The Sovereign Cloud <br/> <span class="text-bou-blue italic opacity-95">Infrastructure Redefined</span></h1>
 
     <p>Engineering the technological bedrock for African enterprises with uncompromising digital infrastructure.</p>
 
     <div class="registry-form">
-      <input type="email" placeholder="Enterprise Email" id="email-registry">
+      <input type="email" placeholder="Enterprise Email" id="email-registry"/>
       <button class="btn-initialize" id="registry-btn">Initialize Access</button>
     </div>
 
-    <div id="status-msg"
-      class="mt-8 text-xs font-bold uppercase tracking-[0.3em] opacity-0 transition-opacity text-bou-green">
+    <div id="status-msg" class="mt-8 text-xs font-bold uppercase tracking-[0.3em] opacity-0 transition-opacity text-bou-green">
       Registry updated. Access protocol initialized.
     </div>
   </main>
@@ -343,3 +354,9 @@
     });
   </script>
 </div>
+</main>
+
+<script type="module" src="/assets/js/index.js"></script>
+
+
+</body></html>
