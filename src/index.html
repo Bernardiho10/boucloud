@@ -7,168 +7,156 @@
       }
     }'
 >
-  <!-- Atmospheric Layer -->
+  <!-- Global Overlays -->
   <div class="aurora-container">
     <div class="aurora-orb orb-1"></div>
     <div class="aurora-orb orb-2"></div>
     <div class="aurora-orb orb-3"></div>
   </div>
 
-  <div class="hero-glow"></div>
-
-  <!-- Section 1: Hero -->
+  <!-- Section 1: Hero (Vision) -->
   <section class="snap-section px-6">
-    <div class="reveal flex flex-col items-center text-center">
-      <div class="mb-12 transform transition-all duration-1000">
-        <img src="assets/img/boucloud_logo.jpeg" alt="BouCloud" class="h-28 md:h-44 rounded-[2.5rem] shadow-[0_0_80px_rgba(37,99,235,0.15)] ring-1 ring-white/10 p-1 bg-black">
+    <div class="section-bg" style="background-image: url('assets/img/bg.webp')"></div>
+    <div class="overlay-dark"></div>
+    
+    <div class="reveal flex flex-col items-center text-center relative z-10">
+      <div class="mb-12">
+        <img src="assets/img/boucloud_logo.jpeg" alt="BouCloud" class="h-28 md:h-40 rounded-[2.5rem] shadow-2xl ring-1 ring-white/10 p-1 bg-black">
       </div>
-      <h1 class="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/30 leading-[1] mb-6">
-        Infrastructure <br class="hidden md:block"> Beyond Limits
+      <h1 class="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/40 leading-[1.1] mb-8 font-extrabold tracking-tighter">
+        Sovereign Infrastructure <br> For a New Africa
       </h1>
       <p class="text-xl md:text-3xl text-slate-400 max-w-4xl mx-auto mb-12 font-light tracking-tight leading-snug">
-        The first truly sovereign cloud for the African continent. Uncompromising performance, localized at the source.
+        Expanding the continent's digital frontier with high-fidelity cloud solutions localized at the source.
       </p>
       
-      <div class="flex flex-col md:flex-row items-center gap-6 reveal stagger-2">
-        <div class="group relative px-8 py-4 overflow-hidden rounded-full bg-blue-600 transition-all hover:pr-12">
-           <span class="relative z-10 font-bold">Join the Sovereign Cloud</span>
-           <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 opacity-0 group-hover:opacity-100 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+      <div class="marquee-container w-full max-w-6xl mt-12 bg-white/5 py-4 rounded-2xl backdrop-blur-sm border border-white/5 overflow-hidden">
+        <div class="marquee-content flex gap-8 px-8 items-center">
+            <!-- Featured list -->
+            <span class="text-xs font-bold uppercase tracking-[0.4em] text-bou-blue opacity-80 whitespace-nowrap">Elastic Compute</span>
+            <span class="text-xs font-bold uppercase tracking-[0.4em] text-bou-blue opacity-80 whitespace-nowrap">Anycast Edge</span>
+            <span class="text-xs font-bold uppercase tracking-[0.4em] text-bou-blue opacity-80 whitespace-nowrap">Zero-Trust Security</span>
+            <span class="text-xs font-bold uppercase tracking-[0.4em] text-bou-blue opacity-80 whitespace-nowrap">NVMe Gen-5 Storage</span>
+            <!-- Duplicates for seamless loop -->
+            <span class="text-xs font-bold uppercase tracking-[0.4em] text-bou-blue opacity-80 whitespace-nowrap">Elastic Compute</span>
+            <span class="text-xs font-bold uppercase tracking-[0.4em] text-bou-blue opacity-80 whitespace-nowrap">Anycast Edge</span>
+            <span class="text-xs font-bold uppercase tracking-[0.4em] text-bou-blue opacity-80 whitespace-nowrap">Zero-Trust Security</span>
+            <span class="text-xs font-bold uppercase tracking-[0.4em] text-bou-blue opacity-80 whitespace-nowrap">NVMe Gen-5 Storage</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 2: Technical Specs (Bento Grid Expansion) -->
+  <!-- Section 2: Features (Marquee & Technical Specs) -->
   <section class="snap-section px-6">
-    <div class="w-full max-w-7xl mx-auto">
-      <header class="text-center mb-16 reveal">
-        <span class="text-bou-green text-sm font-bold uppercase tracking-[0.4em] mb-4 block">Engineered for Scale</span>
-        <h2 class="text-white mb-4">Core Capabilities</h2>
-      </header>
+    <div class="section-bg" style="background-image: url('assets/img/section2.webp')"></div>
+    <div class="overlay-dark"></div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full max-w-7xl relative z-10 items-center">
+      <!-- Left: Vertical Marquee -->
+      <div class="lg:col-span-4 h-[600px] hidden lg:flex flex-col marquee-container">
+        <div class="marquee-content h-full">
+            <div class="feature-pill">PostgreSQL Clusters</div>
+            <div class="feature-pill">Kubernetes Engine</div>
+            <div class="feature-pill">Private VPC Peering</div>
+            <div class="feature-pill">Object Storage (S3)</div>
+            <div class="feature-pill">Load Balancers</div>
+            <div class="feature-pill">Dedicated Firewalls</div>
+            <div class="feature-pill">Global CDN Cache</div>
+            <!-- Duplicates -->
+            <div class="feature-pill">PostgreSQL Clusters</div>
+            <div class="feature-pill">Kubernetes Engine</div>
+            <div class="feature-pill">Private VPC Peering</div>
+            <div class="feature-pill">Object Storage (S3)</div>
+        </div>
+      </div>
+
+      <!-- Right: Technical Details -->
+      <div class="lg:col-span-8 reveal">
+        <header class="mb-12">
+            <span class="text-bou-green text-sm font-bold uppercase tracking-[0.4em] mb-4 block">Unified Control Plane</span>
+            <h2 class="text-white mb-6">Engineered for Elasticity</h2>
+            <p class="text-slate-400 text-lg font-light leading-relaxed">BouCloud delivers 100% African-owned infrastructure, bypassing global latency bottlenecks with hardware-level optimization.</p>
+        </header>
+
+        <div class="bento-grid">
+            <div class="bento-item glass-card p-10 rounded-[2.5rem] col-span-2 reveal stagger-1">
+                <h3 class="text-2xl font-bold mb-4">Ultra-Low Latency</h3>
+                <p class="text-sm text-slate-500">12ms average latency across major African metros. Native routing via Subsea-1 and MainOne terrestrial fibers.</p>
+            </div>
+            <div class="bento-item glass-card p-8 rounded-[2.5rem] reveal stagger-2">
+                <h3 class="text-xl font-bold mb-2">99.99% SLA</h3>
+                <p class="text-xs text-slate-500">Redundant power & cooling across dual-active Availability Zones.</p>
+            </div>
+            <div class="bento-item glass-card p-8 rounded-[2.5rem] reveal stagger-3">
+                <h3 class="text-xl font-bold mb-2">Local Data Residency</h3>
+                <p class="text-xs text-slate-500">Comply with NDPR and local data laws natively.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Value Proposition (Cultural High Fidelity) -->
+  <section class="snap-section px-6">
+    <div class="section-bg" style="background-image: url('assets/img/section3.webp')"></div>
+    <div class="overlay-dark"></div>
+
+    <div class="reveal max-w-5xl text-center relative z-10">
+      <h2 class="text-white mb-10 leading-tight italic">"Sovereignty is not an option. It's the foundation."</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
+        <div class="text-left space-y-6 reveal stagger-1">
+            <h4 class="text-bou-blue font-bold uppercase tracking-widest">Vision</h4>
+            <p class="text-slate-300 text-lg font-light">To be the primary engine of the African digital economy, providing the platform where the next generation of unicorns are built.</p>
+        </div>
+        <div class="text-left space-y-6 reveal stagger-2">
+            <h4 class="text-bou-green font-bold uppercase tracking-widest">Mission</h4>
+            <p class="text-slate-300 text-lg font-light">Accelerating digital transformation through secure, high-performance, and localized infrastructure accessible to every developer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Reservation & Coming Soon -->
+  <section class="snap-section px-6">
+    <div class="section-bg" style="background-image: url('assets/img/section4.webp')"></div>
+    <div class="overlay-dark"></div>
+
+    <div class="reveal flex flex-col items-center text-center relative z-10 w-full max-w-4xl">
+      <span class="px-6 py-2 rounded-full glass-card text-xs font-bold text-bou-green uppercase tracking-[0.5em] mb-12">Limited Alpha Access</span>
+      <h2 class="mb-8">Claim Your Presence</h2>
+      <p class="text-slate-400 text-2xl font-light mb-16 max-w-2xl">First nodes coming online Q3 2026. Join the whitelist for early server provisioning.</p>
       
-      <div class="bento-grid">
-        <!-- Compute - Large -->
-        <div class="bento-item lg:col-span-2 lg:row-span-2 glass-card p-12 rounded-[3rem] reveal stagger-1">
-          <div class="h-full flex flex-col">
-            <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-8">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-              </svg>
-            </div>
-            <h3 class="text-4xl font-bold text-white mb-6">Elastic Compute</h3>
-            <p class="text-slate-400 text-lg leading-relaxed mb-8 font-light">
-              High-frequency Intel Gold & AMD EPYC processors. Dedicated CPU cores and non-overcommitted RAM for high-performance enterprise workloads.
-            </p>
-            <ul class="grid grid-cols-2 gap-4 mt-auto">
-              <li class="flex items-center gap-2 text-xs text-slate-500 uppercase font-bold tracking-widest"><div class="w-1.5 h-1.5 rounded-full bg-bou-blue"></div> Native NVMe</li>
-              <li class="flex items-center gap-2 text-xs text-slate-500 uppercase font-bold tracking-widest"><div class="w-1.5 h-1.5 rounded-full bg-bou-blue"></div> 100Gbps Mesh</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Security -->
-        <div class="bento-item lg:col-span-2 glass-card p-10 rounded-[3rem] reveal stagger-2">
-           <div class="flex flex-col md:flex-row gap-8 items-start">
-             <div class="w-16 h-16 rounded-2xl bg-bou-green/10 flex-shrink-0 flex items-center justify-center">
-                <svg class="h-8 w-8 text-bou-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-             </div>
-             <div>
-               <h3 class="text-2xl font-bold text-white mb-2">Zero-Trust Shield</h3>
-               <p class="text-slate-400 leading-relaxed font-light">Global WAF and DDoS protection integrated at the edge. Automatic Anycast routing ensures your traffic is always protected and proximal.</p>
-             </div>
-           </div>
-        </div>
-
-        <!-- DB -->
-        <div class="bento-item glass-card p-8 rounded-[3rem] reveal stagger-3">
-          <h4 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">Storage</h4>
-          <h3 class="text-2xl font-bold text-white mb-2">Managed DB</h3>
-          <p class="text-slate-500 text-sm">PostgreSQL clusters with 1-click scaling.</p>
-        </div>
-
-        <!-- API -->
-        <div class="bento-item glass-card p-8 rounded-[3rem] reveal stagger-4">
-           <h4 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">Dev-First</h4>
-           <h3 class="text-2xl font-bold text-white mb-2">RESTful CLI</h3>
-           <p class="text-slate-500 text-sm">Infrastructure as code, built in.</p>
-        </div>
+      <div class="w-full max-w-xl glass-card p-2 rounded-full flex items-center shadow-[0_0_100px_rgba(37,99,235,0.1)] reveal stagger-2">
+        <input 
+          id="email-input"
+          type="email" 
+          placeholder="Enterprise email address" 
+          class="bg-transparent border-none focus:ring-0 text-white px-10 py-6 w-full placeholder:text-slate-600 font-light text-lg"
+        >
+        <button 
+          id="subscribe-btn"
+          class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-12 py-6 rounded-full transition-all duration-500 shadow-xl"
+        >
+          Join
+        </button>
       </div>
-    </div>
-  </section>
 
-  <!-- Section 3: Performance Advantage -->
-  <section class="snap-section px-6">
-    <div class="w-full max-w-6xl mx-auto">
-      <div class="reveal glass-card rounded-[4rem] p-16 md:p-24 relative overflow-hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <h2 class="text-white mb-8">Localized for Supremacy</h2>
-            <p class="text-slate-400 text-xl font-light mb-12">
-              Global cloud providers ignore the specific latency needs of the African continent. We don't. Our core nodes are positioned in the same buildings as your customers.
-            </p>
-            <div class="flex flex-col gap-8">
-              <div class="flex justify-between items-center group">
-                <span class="text-slate-300 font-bold text-lg">Lagos Hub</span>
-                <span class="text-bou-green group-hover:stat-glow transition-all font-mono text-3xl">12ms</span>
-              </div>
-              <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
-                <div class="bg-bou-green h-full w-[95%]"></div>
-              </div>
-              <div class="flex justify-between items-center group">
-                <span class="text-slate-300 font-bold text-lg">Nairobi Node</span>
-                <span class="text-blue-400 group-hover:stat-glow transition-all font-mono text-3xl">15ms</span>
-              </div>
-              <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
-                <div class="bg-blue-400 h-full w-[88%]"></div>
-              </div>
-            </div>
-          </div>
-          <div class="relative">
-             <div class="aspect-square rounded-full border border-white/5 flex items-center justify-center p-12">
-                <div class="w-full h-full rounded-full border border-blue-500/20 animate-pulse flex items-center justify-center">
-                   <img src="assets/img/boucloud_logo.jpeg" class="w-32 h-32 rounded-3xl opacity-80 filter grayscale hover:grayscale-0 transition-all">
-                </div>
-             </div>
-             <div class="absolute -top-4 -right-4 glass-card p-6 rounded-3xl">
-                <div class="text-3xl font-bold text-white">40+</div>
-                <div class="text-[10px] uppercase tracking-widest text-slate-500">Global Edge PoPs</div>
-             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 4: Reserved Access -->
-  <section class="snap-section px-6">
-    <div class="w-full max-w-4xl mx-auto reveal">
-      <div class="flex flex-col items-center text-center">
-        <h2 class="mb-8">Claim Your Presence</h2>
-        <p class="text-slate-400 text-2xl font-light mb-16 max-w-2xl">Deploy enterprise infrastructure on the most advanced cloud platform in the region. First access is limited.</p>
-        
-        <div class="w-full max-w-xl glass-card p-2 rounded-full flex items-center shadow-[0_0_100px_rgba(37,99,235,0.1)] reveal stagger-2">
-          <input 
-            id="email-input"
-            type="email" 
-            placeholder="Enterprise email address" 
-            class="bg-transparent border-none focus:ring-0 text-white px-10 py-6 w-full placeholder:text-slate-600 font-light text-lg"
-          >
-          <button 
-            id="subscribe-btn"
-            class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-12 py-6 rounded-full transition-all duration-500 shadow-xl"
-          >
-            Join
-          </button>
-        </div>
-        <div id="status-msg" class="mt-8 text-sm font-bold uppercase tracking-[0.3em] opacity-0 transition-all text-bou-green">
-           Welcome to the elite cloud.
-        </div>
+      <div id="status-msg" class="mt-8 text-sm font-bold uppercase tracking-[0.3em] opacity-0 transition-all text-bou-green">
+         Sovereignty reserved.
       </div>
       
-      <footer class="mt-32 pt-12 border-t border-white/5 w-full flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-slate-600 uppercase tracking-[0.4em]">
-        <p>&copy; 2026 BouCloud Technology Partners</p>
-        <p>Part of <a href="https://www.bougroup.org" class="text-blue-500 hover:text-white transition-colors">BOU Group</a> International</p>
-      </footer>
+      <!-- COMING SOON MARQUEE AT BOTTOM -->
+      <div class="marquee-container w-screen absolute bottom-0 left-0 bg-bou-blue/10 py-3 border-t border-white/5">
+        <div class="marquee-content flex gap-12 whitespace-nowrap">
+            <span class="text-[10px] font-bold uppercase tracking-[0.8em] text-white/40">COMING SOON 2026</span>
+            <span class="text-[10px] font-bold uppercase tracking-[0.8em] text-white/40">COMING SOON 2026</span>
+            <span class="text-[10px] font-bold uppercase tracking-[0.8em] text-white/40">COMING SOON 2026</span>
+            <span class="text-[10px] font-bold uppercase tracking-[0.8em] text-white/40">COMING SOON 2026</span>
+            <span class="text-[10px] font-bold uppercase tracking-[0.8em] text-white/40">COMING SOON 2026</span>
+            <span class="text-[10px] font-bold uppercase tracking-[0.8em] text-white/40">COMING SOON 2026</span>
+        </div>
+      </div>
     </div>
   </section>
 </div>
